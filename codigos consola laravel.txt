@@ -1,0 +1,46 @@
+composer create-project laravel/laravel CRUD-L10 //crear proyecto laravel
+php artisan make:controller HomeController //crear controlador
+php artisan make:controller CursoController //crear controlador
+php artisan make:migration cursos //
+php artisan make:migration create_cursos_table
+php artisan make:migration add_avatar_to_users_table
+php artisan migrate:rollback
+php artisan make:model curso
+php artisan migrate:reset
+php artisan migrated
+php artisan migrate:fresh
+php artisan db:seed
+php artisan migrate:fresh --seed
+php artisan migratec --seed
+
+//consultas//
+$cursos = Curso::all();//devuelve todos los elementos de una tabla;
+$cursos = Curso::where('categoria','diseño web')->get(); // devuelve los registros donde la categoria es diseño web y el get los muestra
+$cursos = Curso::where('categoria','diseño web')->orderBy('id','desc')->get(); // los mismo que el de arriba pero ordenados con el id en manera desendente
+$cursos = Curso::where('categoria','diseño web')->orderBy('name','asc')->get();// ordena en base al nombre de manera asendente
+$cursos = Curso::where('categoria','diseño web')->orderBy('name','asc')->first();//devuelve el primer campo ya ordenado
+$cursos = Curso::select('name', 'description')->get();//devuelve todos los registros pero solo el nomre y descripcion
+$cursos = Curso::select('name', 'description')->orderBY('name','asc')->get();//devuelve los mismo de arriba pero ordenado de manera asendente el nombre
+$cursos = Curso::select('name', 'description','categoria')->orderBY('name','asc')->where('categoria','diseño web')->get();//filtra para solo mostrar los de categoria diseño web
+$cursos = Curso::select('name as title', 'description','categoria')->orderBY('name','asc')->where('categoria','diseño web')->get();//cambia el nombre de parametro name y muestra los registros con title
+$cursos = Curso::select('name as title', 'description','categoria')->orderBY('name','asc')->where('categoria','diseño web')->take(5)->get();//take solo muestra 5 registros
+$cursos = Curso::where('name','Earum quia ut et sed.')->get();//devuelve solo un registro que se llame igual a lo ingresado
+
+$cursos = Curso::where('name','Earum quia ut et sed.')->get();//envia un arreglo completo
+$cursos->name;// error porque no puede enviar todo el arreglo
+$cursos = Curso::where('name','Earum quia ut et sed.')-first();//asi si puede almcena solo el primer valor
+$cursos->name;// devuelve solo el nombre solicitado
+$cursos->description;// devuelve solo la descripcion solicitada una vez ya seleccionadael first registro
+
+$cursos = Curso::where('id',5)->first();// devuelve el registro en relacion al id seleccionado
+$cursos = Curso::find(5);// es los mismo de arriba pero simplificado
+
+$cursos = Curso::where('id','<=',45)->get(); //tambien acepta valores "<,>,<=,>=,=,<>" mostrara los registros dependiendo el caracter
+$cursos = Curso::where('name','like','% voluptatibus %')->get();//busca en los registros la palabra ingresada en el paramtro indicado (name)
+
+
+//pasos subien git
+$ git status
+$ git add .
+$ git commit -m "texto0"
+$ git push
