@@ -13,16 +13,19 @@ use App\Http\Controllers\CursoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+/*Route::controller(CursoController::class)->group(function(){
+    Route::get('cursos','index')->name('cursos.index');
+    Route::get('cursos/create','create')->name('cursos.create');
+    Route::get('cursos/{curso}','show')->name('cursos.show');
+});*/
 //forma de llamar un  controlador en laravel 8->
 Route::get('/', HomeController::class);
 
-Route::controller(CursoController::class)->group(function(){
-    Route::get('cursos','index');
-    Route::get('cursos/create','create');
-    Route::get('cursos/{curso}','show');
-});
-
-
+Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
+Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create');
+Route::get('cursos/{curso}',[CursoController::class, 'show'])->name('cursos.show');
 
 
 //forma de llamar un controlador laravel 7<-
@@ -38,9 +41,9 @@ Route::controller(CursoController::class)->group(function(){
     return "Bienvenido al cursos $curso";
 });*/
 
-Route::get('cursos/create', [CursoController::class, 'create']);
+//Route::get('cursos/create', [CursoController::class, 'create']);
 
-Route::get('cursos/{curso}', [CursoController::class, 'show']);
+//Route::get('cursos/{curso}', [CursoController::class, 'show']);
 /*
 Route::get('cursos/{curso}/{categoria}',function($curso, $categoria){
     return "Bienvenido al cursos $curso, de la categoria $categoria";
