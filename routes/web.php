@@ -25,7 +25,7 @@ Route::get('/', HomeController::class);
 
 Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create');
-Route::get('cursos/{curso}',[CursoController::class, 'show'])->name('cursos.show');
+Route::get('cursos/{id}',[CursoController::class, 'show'])->name('cursos.show');
 
 
 //forma de llamar un controlador laravel 7<-

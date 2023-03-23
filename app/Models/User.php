@@ -56,6 +56,12 @@ class User extends Authenticatable
             }//transforman el valor antes de ingresarlo e ingresan
         );
     }
+
+   /* public function obtenerV()
+	{
+		$datos = $this->db->query("SELECT * FROM curso  ORDER BY id Asc");
+		return $datos->getResult();
+	}*/
     /*
     public function getNameAttribute($value){
         return ucwords($value);//accesores anteriormente

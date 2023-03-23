@@ -8,9 +8,9 @@
     <!--<link
       href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
       rel="stylesheet"
-    />
+    />-->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    @vite('resources/css/app.css')-->
+    @vite('resources/css/app.css')
 </head>
 <body>
     @yield('content')
