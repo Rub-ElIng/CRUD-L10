@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(CursoSeeder::class);
-        //User::factory(10)->create();
-        curso::factory(50)->create();
+        User::factory(10)->create();
+        Curso::factory(50)->create();
         }
         
 }
