@@ -38,6 +38,10 @@ Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.u
 
 Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('cursos.destroy'); 
 
+Route::get('/vue', function(){
+    return view('vue');
+
+});
 
 //forma de llamar un controlador laravel 7<-
 //Route::get('/', "HomeController");
