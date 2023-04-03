@@ -8,9 +8,10 @@
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
       rel="stylesheet">
-      <!--@vite('resources/css/app.css')-->
+      @vite('resources/css/app.css')
 </head>
 <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #66b3ff;">
+    
     @vite('resources/js/vue/main.js') 
     @yield('content')
 </body>

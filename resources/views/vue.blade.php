@@ -9,8 +9,11 @@
 </head>
 <body>
     <script src="//unpkg.com/oruga-next/dist/oruga.js"></script>
-    @vite('resources/js/vue/main.js') 
-    <div id="app">
-    </div>
+    
+
+
+    <div id="app"></div>
+        @vite('resources/js/vue/main.js') 
+    
 </body>
 </html>

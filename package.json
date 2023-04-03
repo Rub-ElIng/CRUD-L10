@@ -19,7 +19,9 @@
         "@vitejs/plugin-vue": "^4.1.0",
         "latest": "^0.2.0",
         "react-scripts": "^5.0.1",
-        "vue": "^3.2.36",
-        "vue-loader": "^17.0.1"
+        "vue": "^3.2.47",
+        "vue-axios": "^3.5.2",
+        "vue-loader": "^17.0.1",
+        "vue-router": "^4.1.6"
     }
 }
