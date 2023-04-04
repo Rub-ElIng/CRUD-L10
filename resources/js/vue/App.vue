@@ -1,50 +1,45 @@
 <template>
-<div>
-    <h1 class="block uppercase tracking-wide text-white font-bold mb-2 text-3xl">Principal </h1>
-
-    
-    <div  class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" >
-        <div class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
-          <div class="text-white">
-            <div  class="mb-8 flex flex-col items-center">
-                <h1 class="block uppercase tracking-wide text-white font-bold mb-2 text-3xl" >Bienvenido a la pagina principal de Cursos</h1>
-                        <br>
-                        <table class="table-auto">
-                            <thead>
-                              <tr>
-                                <th class="text-1xl">CURSO</th>
-                                <!--<th class="text-1xl">ELIMINAR</th>-->
-                              </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                    <ul class="list-disc ">
-                                        @foreach ($cursos as $curso)
-                                <li>
-                                    <a class="bg-orange-500 text-white px-4 py-2  tracking-wider"></a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </td>
-                    <!--<td>
-                        <a class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                        href="">
-                        Eliminar
-                       </a>
-                    </td>-->
-                </tr>
-                            </tbody>
-                        </table>
-                        &nbsp; 
-                        <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        href="{{ route('cursos.create') }}">Crear Curso</a>
-                </div>
-            </div>
+    <nav class="bg-black border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="https://flowbite.com/" class="flex items-center">
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CRUD VUE</span>
+          </a>
+          <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Inicio</a>
+              </li>
+              <li>
+                <router-link outer-link to="show" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Mostrar
+                    
+                </router-link>
+              </li>
+              <li>
+                <router-link router-link to="create" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Crear</router-link>
+              </li>
+              <li>
+                <router-link router-link to="edit" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Editar</router-link>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    </div>
-    <!--<list />-->
+      </nav>
+      <router-view></router-view>
+<!-- <div>
+    <router-link to="create">Create</router-link>
+    <br>
+    <router-link to="edit">Editar</router-link>
+    <br>
+    <router-link to="show">Mostrar</router-link>
+
+    <router-view></router-view>
+</div> -->
+
+
 </template>
 <!--<script>
 import List from './components/List.vue'

@@ -12,7 +12,7 @@
 
 <form class="w-full max-w-lg" action="{{ route('cursos.store') }}" method="POST">
     <h1 class="block uppercase tracking-wide text-white font-bold mb-2 text-3xl" >En esta pagina prodras crear un curso</h1>
-    @csrf
+
     
         <br>
         <div class="flex flex-wrap -mx-3 mb-6">

@@ -1,33 +1,27 @@
-import { createApp } from 'vue'
-
-import Oruga from '@oruga-ui/oruga-next'
-import '@oruga-ui/oruga-next/dist/oruga.css'
-import '@oruga-ui/oruga-next/dist/oruga-full.css'
-
+import './../bootstrap.js';
+import '../../css/app.css';
 import App from './App.vue'
-import axios from 'axios'
+import Create from './components/Crear.vue';
+import Editar from './components/Editar.vue';
+import Mostrar from './components/Mostrar.vue';
+import Index from './components/Index.vue';
+import {createRouter, createWebHashHistory} from 'vue-router'
+import { createApp } from 'vue';
+
+const routes = [
+  { path: '/', component: Index },
+  { path: '/create', component: Create },
+  { path: '/edit', component: Editar},
+  { path: '/show', component: Mostrar},
+]
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+})
+
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
 
 
 
-
-const app =createApp(App).use(Oruga) 
-
-//app.mount('#app')
-
-app.mount('#cont')
-app.mount('#cont1')
-app.mount('#cont2')
-app.mount('#cont3')
-app.mount('#tb')
-app.mount('#tx')
-app.mount('#list')
-app.mount('#estaA')
-app.mount('#estaA1')
-
-
-
-
-
-
-//app.config.globalProperties.$axios = axios
-//indow.axios = axios

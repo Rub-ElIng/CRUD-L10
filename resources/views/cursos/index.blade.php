@@ -6,7 +6,7 @@
 @section('content')
 
 
-@vite('resources/js/vue/main.js') 
+//vite('resources/js/vue/main.js') 
 
 
     <div id="cont">
@@ -25,19 +25,19 @@
                                 <tr>
                                     <td>
                                     <ul id="list"  ">
-                                        @foreach ($cursos as $curso)
+                                       {{-- @foreach ($cursos as $curso)--}}
                                 <li>
-                                    <a id="estA"  href="{{ route('cursos.show', $curso->id) }}">{{ $curso->name }}</a>
+                                    <a id="estA" {{--   href="{{ route('cursos.show', $curso->id) }}"--}}>{{--{{ $curso->name }}--}}</a>
                                 </li>
-                            @endforeach
-                        </ul>
-                    </td>
-                </tr>
+                            {{--@endforeach--}}
+                                    </ul>
+                                    </td>
+                                </tr>
+                          
                             </tbody>
                         </table>
                         &nbsp; 
-                        <a id="estA1"
-                        href="{{ route('cursos.create') }}">Crear Curso</a>
+                        <a id="estA1" {{--href="{{ route('cursos.create') }}"--}}>Crear Curso</a>
                     </form>
                 </div >
                 {{ $cursos->links() }}
