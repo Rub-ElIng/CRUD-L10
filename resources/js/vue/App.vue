@@ -41,13 +41,19 @@
 
 
 </template>
-<!--<script>
-import List from './components/List.vue'
+
+<script>
+import Mostrar from './components/Mostrar.vue';
+import Index from './components/Index.vue';
+import Crear from './components/Crear.vue';
+import Editar from './components/Editar.vue';
 export default {
-    components:{
-        List
-    }
+    components: {
+        Mostrar,
+        Index,
+        Editar,
+        Crear
+    },
+
 }
-</script>-->
-
-
+</script>

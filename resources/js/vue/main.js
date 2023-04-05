@@ -8,6 +8,8 @@ import Index from './components/Index.vue';
 import {createRouter, createWebHashHistory} from 'vue-router'
 import { createApp } from 'vue';
 
+
+
 const routes = [
   { path: '/', component: Index },
   { path: '/create', component: Create },

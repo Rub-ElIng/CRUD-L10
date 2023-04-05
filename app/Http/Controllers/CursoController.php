@@ -14,7 +14,11 @@ class CursoController extends Controller
 
         //return redirect()->route('cursos.index',compact('cursos'));
 
-        return view('cursos.index', compact('cursos'));
+        //return view('cursos.index', compact('cursos'));
+
+        // return response()->json($cursos);
+        return $cursos;
+        
     }
     public function create()
     {
@@ -35,7 +39,8 @@ class CursoController extends Controller
 
     public function show(Curso $curso)
     {
-        return view('cursos.show', compact('curso'));
+        // return view('cursos.show', compact('curso'));
+        return $curso;
     }
 
     public function edit(Curso $curso)
@@ -45,15 +50,16 @@ class CursoController extends Controller
 
     public function update(Request $request, Curso $curso)
     {
-        $curso->name = $request->name;
-        $curso->description = $request->descripcion;
-        $curso->categoria = $request->categoria;
+        // $curso->name = $request->name;
+        // $curso->description = $request->descripcion;
+        // $curso->categoria = $request->categoria;
 
-        $curso->save();
+        // $curso->save();
 
-        //$curso->update($request->all());
+        // //$curso->update($request->all());
 
-        return redirect()->route('cursos.show', $curso);
+        // return redirect()->route('cursos.show', $curso);
+        $curso->update($request->all());
         
     }
 
@@ -61,7 +67,8 @@ class CursoController extends Controller
     {
 
         $curso->delete();
+        
 
-        return redirect()->route('cursos.index');
+        //return redirect()->route('cursos.index');
     }
 }

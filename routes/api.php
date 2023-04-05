@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
- Route::resource('curso', App\Http\Controllers\CursoController::class);
+ //Route::resource('curso', App\Http\Controllers\CursoController::class);

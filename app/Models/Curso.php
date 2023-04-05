@@ -11,3 +11,5 @@ class Curso extends Model
     use HasFactory;
     //protected $table = "users";
 }
+
+
