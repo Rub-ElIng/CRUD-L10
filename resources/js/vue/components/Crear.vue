@@ -84,8 +84,40 @@
 
 <script>
 export default {
+    data() {
+        return {
+            curso: {
+                name: '',
+                description: '',
+                categoria: ''
+            },
+            id: 0,
+            modificar: true,
+            Cursos: [],
+        };
+    },
+   
+    methods: {
+        async listar() {
+            const res = await axios.get('/empleados');
+            this.empleados = res.data;
+        },
 
-}
+        async guardar() {
+            if (this.modificar) {
+                const res = await axios.put('/empleados/' + this.id, this.empleado);
+                // console.log(this.id);
+
+            } else {
+                const res = await axios.post('/empleados/', this.empleado);
+            }
+           
+            this.listar();
+        }
+        
+    }
+    
+};
 </script>
 
 <style>
